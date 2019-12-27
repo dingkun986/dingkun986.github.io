@@ -1,0 +1,693 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .box {
+            height: 698px;
+            width: 986px;
+            margin: 0 auto;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .box ul {
+            width: 3342px;
+            list-style: none;
+            height: 698px;
+            position: absolute;
+        }
+
+        .box ul li {
+            width: 1114px;
+            height: 698px;
+            float: left;
+            position: absolute;
+        }
+
+        .box ul li:first-child {
+            left: 0;
+            bottom: 0;
+        }
+
+        #start {
+            position: absolute;
+            width: 60px;
+            height: 50px;
+            left: 100px;
+            top: 50px;
+            background: salmon;
+            border: none;
+            border-bottom-left-radius: 46%;
+            border-top-left-radius: 46%;
+            line-height: 50px;
+            font-size: 12px;
+            border-right: oldlace 0.4px solid;
+        }
+
+        #music {
+            position: absolute;
+            width: 60px;
+            height: 50px;
+            left: 160px;
+            top: 50px;
+            background: salmon;
+            border: none;
+            border-bottom-right-radius: 46%;
+            border-top-right-radius: 46%;
+            line-height: 50px;
+            font-size: 12px;
+            border-left: oldlace 0.4px solid;
+        }
+
+        .box ul li:first-child span img:first-child {
+            width: 125px;
+            height: 125px;
+            position: absolute;
+            top: -10px;
+            left: 600px;
+        }
+
+        .box ul li:first-child span img:nth-child(2) {
+            position: absolute;
+            width: 144px;
+            height: 80px;
+            top: 80px;
+            left: -100px;
+        }
+
+        .box ul li:first-child span img:last-child {
+            position: absolute;
+            width: 179px;
+            height: 100px;
+            top: 40px;
+            left: 1050px;
+        }
+
+        .box ul li:nth-child(2) {
+            left: 1114px;
+            bottom: 0;
+            position: relative;
+        }
+
+        .box ul li:nth-child(2) span {
+            width: 144px;
+            height: 165px;
+            z-index: 2;
+            position: absolute;
+            bottom: 197px;
+            right: 390px;
+            overflow: hidden;
+        }
+
+        .box ul li:nth-child(2) span img:first-child {
+            position: absolute;
+            width: 72px;
+            height: 165px;
+            top: 0px;
+            left: 0;
+        }
+
+        .box ul li:nth-child(2) span img:last-child {
+            position: absolute;
+            width: 72px;
+            height: 165px;
+            left: 73px;
+            top: 0px;
+        }
+
+        .box ul li:nth-child(2) p img {
+            position: absolute;
+            width: 62.11px;
+            height: 50px;
+            right: -20px;
+            top: 80px;
+        }
+
+        .box ul li:last-child {
+            position: absolute;
+            left: 2228px;
+            bottom: 0;
+            /* position: relative */
+        }
+
+        .box ul li:last-child span img:last-child {
+            position: absolute;
+            width: 24px;
+            height: 25px;
+            top: 90px;
+            left: 225px;
+        }
+
+        .box ul li:last-child span img:nth-child(1) {
+            position: absolute;
+            width: 30px;
+            height: 31px;
+            top: 160px;
+            left: 225px;
+        }
+
+        .box ul li:last-child span img:nth-child(2) {
+            position: absolute;
+            width: 30px;
+            height: 31px;
+            top: 100px;
+            left: 225px;
+        }
+
+        .box ul li:last-child span img:nth-child(3) {
+            position: absolute;
+            width: 25px;
+            height: 26px;
+            top: 135px;
+            left: 340px;
+        }
+
+        .box ul li:last-child span img:nth-child(4) {
+            position: absolute;
+            width: 30px;
+            height: 31px;
+            top: 66px;
+            left: 708px;
+        }
+
+        .box ul li:last-child span img:nth-child(5) {
+            position: absolute;
+            width: 28px;
+            height: 29px;
+            top: 210px;
+            left: 778px;
+        }
+
+        .box ul li:last-child p img:first-child {
+            position: absolute;
+            width: 106px;
+            height: 200px;
+            left: 480px;
+            bottom: 225px;
+            z-index: 2;
+            display: none;
+        }
+
+        .box ul li:last-child p img:nth-child(2) {
+            position: absolute;
+            width: 106px;
+            height: 200px;
+            left: 540px;
+            bottom: 225px;
+        }
+
+        .box ul li:last-child div img {
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            left: 50px;
+            top: -20px;
+            display: none;
+        }
+
+        .box ul li img {
+            width: 1114px;
+            height: 698px;
+        }
+
+        .box span img {
+            position: absolute;
+            width: 106px;
+            height: 200px;
+            z-index: 20;
+            bottom: 140px;
+            left: 1660px;
+        }
+
+        .box span img.hidden {
+            display: none;
+        }
+
+        #boyout {
+            left: 595px;
+            transform: scale(0);
+            opacity: 0;
+        }
+
+        #boyenter {
+            position: absolute;
+            width: 106px;
+            height: 200px;
+            left: 90px;
+            bottom: 140px;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <ul>
+            <li><img src="images\otherimg\QixiA.png">
+                <span><img src="images\otherimg\sun.png" id="sun"><img src="images\otherimg\cloud1.png" id="cloud1"><img
+                        src="images\otherimg\cloud2.png" id="cloud2"></span>
+                <button id="start">Go</button><button id="music">music</button>
+            </li>
+            <li><img src="images\otherimg\QixiB-dark.png" id="changeBackGround"><span><img
+                        src="images\otherimg\door-left.png" id="doorLeft"><img src="images\otherimg\door-right.png"
+                        id="doorRight"></span>
+                <p><img src="images\initPic\bird1.png" id="bird"></p>
+            </li>
+            <li><img src="images\otherimg\QixiC.png"><span><img src="images\otherimg\stars.png" class="stars"><img
+                        src="images\otherimg\stars.png" class="stars"><img src="images\otherimg\stars.png"
+                        class="stars"><img src="images\otherimg\stars.png" class="stars"><img
+                        src="images\otherimg\stars.png" class="stars"></span>
+                <p><img src="images\initPic\boy-rotate1.png" id="boyrotate"><img src="images\initPic\girl-rotate1.png"
+                        id="girlrotate"></p>
+                <div><img src="images\snowflake\snowflake1.png" class="flowers"><img
+                        src="images\snowflake\snowflake2.png" class="flowers">
+                    <img src="images\snowflake\snowflake3.png" class="flowers"><img
+                        src="images\snowflake\snowflake4.png" class="flowers">
+                    <img src="images\snowflake\snowflake5.png" class="flowers"><img
+                        src="images\snowflake\snowflake6.png" class="flowers">
+                    <img src="images\snowflake\snowflake1.png" class="flowers"><img
+                        src="images\snowflake\snowflake2.png" class="flowers">
+                    <img src="images\snowflake\snowflake3.png" class="flowers"><img
+                        src="images\snowflake\snowflake4.png" class="flowers">
+                    <img src="images\snowflake\snowflake5.png" class="flowers"><img
+                        src="images\snowflake\snowflake6.png" class="flowers">
+                    <img src="images\snowflake\snowflake1.png" class="flowers"><img
+                        src="images\snowflake\snowflake2.png" class="flowers">
+                    <img src="images\snowflake\snowflake3.png" class="flowers"><img
+                        src="images\snowflake\snowflake4.png" class="flowers">
+                    <img src="images\snowflake\snowflake5.png" class="flowers"><img
+                        src="images\snowflake\snowflake6.png" class="flowers">
+                </div>
+            </li>
+        </ul>
+        <!-- <span><img src="images\initPic\boy-walk1.png" id="boyenter"></span>
+        <span><img src="images\initPic\boy-flower1.png" id="boyout"></span> -->
+        <span><img src="images\initPic\boy-walk1.png" id="boyenter"></span>
+        <span><img src="images\initPic\boy-flower1.png" id="boyout"></span>
+    </div>
+    <script>
+        let oLis = document.querySelectorAll(".box>ul>li"),
+            oDoorLeft = document.querySelector("#doorLeft"),
+            oDoorRight = document.querySelector("#doorRight"),
+            oBoyEnter = document.querySelector("#boyenter"),
+            oBoyOut = document.querySelector("#boyout"),
+            oBtn = document.querySelector("#start"),
+            oBackGround2 = document.querySelector("#changeBackGround")
+        oBtn.onclick = function () {
+            //人物运动模块
+            //动作
+            WalkAct();
+            //白云1运动模块 
+            Cloud1();
+            //太阳运动模块
+            Sun();
+            //白云2运动模块
+            Cloud2();
+            //位置走水平线模块
+            var boyPositionLeftLevel = 90;
+            window.boyPositionLevel = setInterval(function () {
+                boyPositionLeftLevel += 1
+                oBoyEnter.style.left = boyPositionLeftLevel + "px"
+                if (boyPositionLeftLevel >= 550) {
+                    clearInterval(window.cloud1)
+                    clearInterval(window.backGroundAct)
+                    clearInterval(window.Sun)
+                    clearInterval(window.cloud2)
+                    clearInterval(window.walk)
+                    clearInterval(window.boyPositionLevel)
+                    // 开门模块
+                    OpenDoor();
+                    //人物运动模块
+                    //动作
+                    WalkAct();
+                    //换背景图 开灯
+                    changebackopen();
+                    //进门模块
+                    var oBoyEnterOpacity = 1
+                    var oBoyEnterTransform = 1
+                    var oBoyEnterPositionLeft = 550
+                    window.oBoyEnterDoor = setInterval(function () {
+                        oBoyEnterPositionLeft += 1.5
+                        oBoyEnterOpacity -= 0.01
+                        oBoyEnterTransform -= 0.02
+                        oBoyEnter.style.left = oBoyEnterPositionLeft + "px"
+                        oBoyEnter.style.opacity = oBoyEnterOpacity
+                        oBoyEnter.style.transform = "scale(" + oBoyEnterTransform + ")"
+                        if (oBoyEnterTransform < 0.01) {
+                            clearInterval(window.oBoyEnterDoor)
+                            //人物带花运动模块
+                            //动作
+                            WalkWithFlowerAct();
+                            //出门模块
+                            var oBoyOutOpacity = 0
+                            var oBoyOutTransform = 0
+                            window.oBoyOutDoor = setInterval(function () {
+                                oBoyOutOpacity += 0.02
+                                oBoyOutTransform += 0.02
+                                oBoyOut.style.opacity = oBoyOutOpacity
+                                oBoyOut.style.transform = "scale(" + oBoyOutTransform + ")"
+                                if (oBoyOutTransform > 0.999) {
+                                    clearInterval(window.oBoyOutDoor)
+                                    // // 关门模块
+                                    var oDoorLeftnumNew = -73
+                                    var oDoorRightnumNew = 146
+                                    BirdPositionAct();
+                                    window.closeDoor = setInterval(function () {
+                                        oDoorLeftnumNew += 1
+                                        oDoorRightnumNew -= 1
+                                        oDoorLeft.style.left = oDoorLeftnumNew + "px"
+                                        oDoorRight.style.left = oDoorRightnumNew + "px"
+                                        if (oDoorLeftnumNew === 0) {
+                                            clearInterval(window.closeDoor)
+                                            //关灯
+                                            changebackclose();
+                                            // 带花位置水平路段
+                                            PositionWithFlower2()
+                                            BackgroundAct2();
+                                            starsBling();
+
+                                        }
+                                    }, 30)
+
+                                }
+                            }, 60)
+
+                        }
+                    }, 100)
+
+                }
+            }, 41)
+            setTimeout(function () {
+                //背景运动模块
+                BackgroundAct();
+
+            }, 2000)
+
+        }
+        function changebackclose() {
+            oBackGround2.src = "images/otherimg/QixiB-dark.png"
+        }
+        function changebackopen() {
+            oBackGround2.src = "images/otherimg/QixiB-bright.png"
+        }
+        //人物运动模块
+        //动作
+        function WalkAct() {
+            let i = 0;
+            window.walk = setInterval(function () {
+                i > 3 && (i = 0)
+                oBoyEnter.src = "images/initPic/boy-walk" + (i + 1) + ".png"
+                i++
+            }, 270);
+        }
+        //白云1运动模块 
+        function Cloud1() {
+            let oCloud1 = document.querySelector("#cloud1")
+            var Cloud1 = -100;
+            window.cloud1 = setInterval(function () {
+                Cloud1 += 0.4
+                oCloud1.style.left = Cloud1 + "px"
+            }, 10);
+        }
+        //太阳运动模块
+        function Sun() {
+            var oSun = document.querySelector("#sun")
+            var sunNum = 600;
+            var sunNumTop = -10
+            window.Sun = setInterval(function () {
+                sunNumTop += 0.15
+                sunNum -= 1.8
+                oSun.style.left = sunNum + "px"
+                oSun.style.top = sunNumTop + "px"
+            }, 60);
+        }
+        //白云2运动模块
+        function Cloud2() {
+            var oCloud2 = document.querySelector("#cloud2")
+            var Cloud2Left = 1050;
+            var Cloud2Top = 40;
+            window.cloud2 = setInterval(function () {
+                Cloud2Left -= 0.35
+                Cloud2Top -= 0.07
+                oCloud2.style.left = Cloud2Left + "px"
+                oCloud2.style.top = Cloud2Top + "px"
+            }, 10);
+        }
+        // 开门模块
+        function OpenDoor() {
+            var oDoorLeftnum = 0
+            var oDoorRightnum = 73
+            window.openDoor = setInterval(function () {
+                oDoorLeftnum -= 1
+                oDoorRightnum += 1
+                oDoorLeft.style.left = oDoorLeftnum + "px"
+                oDoorRight.style.left = oDoorRightnum + "px"
+                if (oDoorLeftnum === -73) {
+                    clearInterval(window.openDoor)
+                }
+            }, 30);
+        }
+        //人物带花运动模块
+        //动作
+        function WalkWithFlowerAct() {
+            let j = 0;
+            window.walkWithFlower = setInterval(function () {
+                j > 3 && (j = 0)
+                oBoyOut.src = "images/initPic/boy-flower" + (j + 1) + ".png"
+                j++
+            }, 270);
+        }
+        // 位置水平路段
+        function PositionWithFlower() {
+            var boyPositionLeftLevel = 595;
+            window.boyPositionLevel = setInterval(function () {
+                boyPositionLeftLevel += 2
+                oBoyOut.style.left = boyPositionLeftLevel + "px"
+            }, 60)
+        }
+        function PositionWithFlower2() {
+            var boyPositionLeftLevel = 595;
+            window.boyPositionLevel = setInterval(function () {
+                boyPositionLeftLevel -= 3
+                oBoyOut.style.left = boyPositionLeftLevel + "px"
+                if (boyPositionLeftLevel <300) {
+                    clearInterval(window.boyPositionLevel)
+                    // clearInterval(window.backGroundAct)
+                    var boyPositionLeft = 300;
+                    var boyPositionBottom = 140;
+                    window.boyPositionBridge = setInterval(function () {
+                        boyPositionBottom += 1.8
+                        boyPositionLeft += 1.3
+                        oBoyOut.style.left = boyPositionLeft + "px"
+                        oBoyOut.style.bottom = boyPositionBottom + "px"
+                        if (parseInt(oBoyOut.style.bottom) >= 215) {
+                            clearInterval(window.boyPositionBridge)
+
+                            var boyPositionLeftLevel2 = 390;
+                            window.boyPositionLevel2 = setInterval(function () {
+                                boyPositionLeftLevel2 +=1.5
+                                oBoyOut.style.bottom = 225 + "px"
+                                oBoyOut.style.left = boyPositionLeftLevel2 + "px"
+                                if (boyPositionLeftLevel2 >= 470) {//543
+                                    clearInterval(window.boyPositionLevel2)
+                                    clearInterval(window.backGroundAct)
+                                    clearInterval(window.walkWithFlower)
+                                    let oBoyRotate = document.querySelector("#boyrotate")
+                                    oBoyOut.style.display = "none"
+                                    oBoyRotate.style.display = "block"
+                                    BoyRotate();
+                                    GirlRotate();
+                                    setTimeout(function(){
+                                        FlowerFall();
+                                    },800)
+                                }
+                            }, 60)
+
+                        }
+
+                    }, 60)
+
+                }
+
+            }, 60)
+
+        }
+        //背景运动模块
+        function BackgroundAct() {
+            var oUl = document.querySelector('.box>ul')
+            var index = 0
+            var backgroundWidth = 1114
+            window.backGroundAct = setInterval(() => {
+                var oLeft = parseInt(getComputedStyle(oUl).left)
+                // if (index < -backgroundWidth) {
+                //     clearInterval(window.timer)
+                // }
+                index -= 2
+                oUl.style.left = index + 'px'
+            }, 30);
+        }  //背景运动模块2
+        function BackgroundAct2() {
+            var oUl = document.querySelector('.box>ul')
+            var index =-1124
+            var backgroundWidth = 1114
+            window.backGroundAct = setInterval(() => {
+                var oLeft = parseInt(getComputedStyle(oUl).left)
+                if (index < -2*backgroundWidth) {
+                    clearInterval(window.backGroundAct)
+                }
+                index -= 4
+                oUl.style.left = index + 'px'
+            }, 30);
+        }
+        //小鸟运动模块
+        //位置
+        function BirdPositionAct() {
+            let oBird = document.querySelector("#bird")
+            var birdNum = -20;
+            window.bird = setInterval(function () {
+                birdNum += 1.8
+                oBird.style.right = birdNum + "px"
+            }, 30)
+            // 动作
+            let birdActNum = 0
+            window.birdact = setInterval(function () {
+                birdActNum == 2 ? birdActNum = 0 : birdActNum++
+                oBird.src = "images/initPic/bird" + (birdActNum + 1) + ".png"
+            }, 180)
+        }
+
+        //  位置走上坡桥模块
+        function WalkPositionTopRight() {
+            var boyPositionLeft = 300;
+            var boyPositionBottom = 140;
+            window.boyPositionBridge = setInterval(function () {
+                boyPositionBottom += 20
+                boyPositionLeft += 0.1
+                oBoyOut.style.left = boyPositionLeft + "px"
+                oBoyOut.style.bottom = boyPositionBottom + "px"
+            }, 60)
+        }
+        // 转身女
+        function GirlRotate() {
+            let oGirlRotate = document.querySelector("#girlrotate")
+            var girlRotateNum = 0
+            window.girlRotate = setInterval(function () {
+                oGirlRotate.src = "images/initPic/girl-rotate" + (girlRotateNum + 1) + ".png"
+                girlRotateNum == 5 ? clearInterval(window.girlRotate) : girlRotateNum++
+            }, 160)
+        }
+        //人物旋转模块
+        //男
+        function BoyRotate() {
+            let oBoyRotate = document.querySelector("#boyrotate")
+            var boyRotateNum = 0
+            window.boyRotate = setInterval(function () {
+                oBoyRotate.src = "images/initPic/boy-rotate" + (boyRotateNum + 1) + ".png"
+                boyRotateNum == 5 ? clearInterval(window.boyRotate) : boyRotateNum++
+            }, 160)
+        }
+        //星星闪烁模块
+        //Bling闪烁模块
+        starsBling();
+        function starsBling() {
+            StarsAppear();
+            setTimeout(function () {
+                StarsHidden()
+            }, 1600)
+            setTimeout(function () {
+                StarsAppear()
+            }, 3200)
+            setTimeout(function () {
+                StarsHidden()
+            }, 4800)
+            setTimeout(function () {
+                StarsAppear()
+            }, 6400)
+            setTimeout(function () {
+                StarsHidden()
+            }, 8000)
+            setTimeout(function () {
+                StarsAppear()
+            }, 9600)
+            setTimeout(function () {
+                StarsHidden()
+            }, 11200)
+            setTimeout(function () {
+                StarsAppear()
+            }, 12800)
+            setTimeout(function () {
+                StarsHidden()
+            }, 14400)
+            setTimeout(function () {
+                StarsAppear()
+            }, 16000)
+        }
+        //出现模块
+        function StarsAppear() {
+            let oStars = document.querySelectorAll(".stars")
+            var starappearnum = 0
+            window.starAppear = setInterval(function () {
+                starappearnum += 0.1
+                for (let c = 0; c < oStars.length; c++) {
+                    oStars[c].style.opacity = starappearnum
+                    oStars[c].style.transform = "scale(" + starappearnum + ")"
+                }
+                if (starappearnum > 0.999) {
+                    clearInterval(window.starAppear)
+                }
+            }, 100)
+        }
+        //消失模块
+        function StarsHidden() {
+            let oStars = document.querySelectorAll(".stars")
+            var starHideNum = 1
+            window.starHide = setInterval(function () {
+                starHideNum -= 0.1
+                for (let z = 0; z < oStars.length; z++) {
+                    oStars[z].style.opacity = starHideNum
+                    oStars[z].style.transform = "scale(" + starHideNum + ")"
+                }
+                if (starHideNum <= 0) {
+                    clearInterval(window.starHide)
+                }
+            }, 100)
+        }
+        //花下落模块
+        function FlowerFall() {
+            let oFlowers = document.querySelectorAll(".flowers")
+            for (let w = 0; w < oFlowers.length; w++) {
+                oFlowers[w].style.left = w * 80 + "px"
+                oFlowers[w].style.top = w * 10 + "px"
+                if (w == 7) {
+                    break
+                }
+            }
+            for (let h = 7; h < oFlowers.length; h++) {
+                oFlowers[h].style.left = h * 80 + "px"
+                oFlowers[h].style.top = 70 - (h - 6) * 10 + "px"
+            }
+            let FlowersFallSpeed = 0
+            let FlowersAngle = 0
+            setInterval(function () {
+                FlowersFallSpeed += 0.1
+                FlowersAngle = (FlowersAngle + 10) % 360;
+                for (let fall = 0; fall < oFlowers.length; fall++) {
+                    oFlowers[fall].style.top = parseInt(oFlowers[fall].style.top) + FlowersFallSpeed + "px";
+                    oFlowers[fall].style.transform = 'rotate(' + FlowersAngle + 'deg)';
+                    oFlowers[fall].style.display="block"
+                }
+            }, 100)
+
+        }
+    </script>
+</body>
+
+</html>
