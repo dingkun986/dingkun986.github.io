@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>dom下</title>
+    <style>
+    .box{
+        width: 100vw;
+        height: 100vh;
+        position: relative;
+    }
+    #text1{
+        width: 60%;
+        height: 15%;
+        border: 1px solid;
+        position: absolute;
+        top: 10%;
+        left: 20%;
+        resize: none;
+    }   
+    .btn{
+        position: absolute;
+        top: 28%;
+        left: 74.5%;
+        width: 6%;
+        height: 3.5%;
+    } 
+    ul{
+        list-style: none;
+        width: 60%;
+        height:60%;
+        position: absolute;
+        top:35%;
+        left: 17%;
+    } 
+    .shr{
+        color: lawngreen;
+        border-style: dashed;
+
+    }
+        
+    
+    
+    </style>
+</head>
+<body>
+    <div class="box">
+       <textarea name="" id="text1" cols="30" rows="10"></textarea>
+       <button class="btn">提交</button>
+       
+         <ul class="text2">
+
+
+         </ul>
+
+    </div>
+    <script>
+       var oBtn=document.querySelector(".btn");
+       var oText1=document.querySelector("#text1");
+       var oText2=document.querySelector(".text2");
+       console.log(oBtn)
+       console.log(oText1)
+       console.log(oText2)
+       oBtn.onclick=function(){
+        oText2.innerHTML+="<li>"+oText1.value+"</li>"+"<hr class='shr'>";
+        oText1.value="";
+       };
+    
+    </script>
+</body>
+</html>

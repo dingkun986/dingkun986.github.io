@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>dom(下)</title>
+    <style>
+        .box{
+            width: 180px;
+            height: 60px;
+            background-color: aquamarine;
+        }
+    
+    </style>
+</head>
+<div class="box"></div>
+<script>
+  var oBox=document.querySelector(".box")
+  var oColor=["hotpink","cyan","gold"]
+  var oNum=0;
+   oBox.onclick=function(){
+   oBox.style.backgroundColor = oColor[oNum%oColor.length];
+       oNum++;
+   };
+
+</script>
+<body>
+    
+</body>
+</html>

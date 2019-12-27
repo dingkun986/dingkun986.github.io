@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        .box {
+            width: 780px;
+            height: 330px;
+            margin: 50px auto 0;
+            overflow: hidden;
+            position: relative;
+        }
+        ul {
+            list-style: none;
+        }
+        .box ul li {
+            float: left;
+            height: 100%;
+            width: 100%;
+            display: none;
+        }
+        .box ul li.show {
+            display: block;
+        }
+        .box span {
+            position: absolute;
+            width: 45px;
+            height: 70px;
+            top: 39.7%;
+            left: 0%;
+            font-weight: bolder;
+            font-size: 22px;
+            color:magenta;
+            background: black;
+            text-align: center;
+            line-height: 70px;
+        }
+        .box span:last-child {
+            left: 94.2%;
+        }
+        .select {
+            margin: 0 auto;
+            width: 780px;
+            height: 48px;
+        }
+        .select ul li {
+            float: left;
+            height: 48px;
+            text-align: center;
+            line-height: 48px;
+            width: 20%;
+            background: black;
+            color:palegreen;
+            font-size: 12px;
+        }
+        .select ul li.active {
+            color: gold;
+            background: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <ul>
+            <li class="show"><img src="img\ban1.jpg"></li>
+            <li><img src="img\ban2.jpg"></li>
+            <li><img src="img\ban3.jpg"></li>
+            <li><img src="img\ban4.jpg"></li>
+            <li><img src="img\ban5.jpg"></li>
+        </ul>
+        <span>&lt;</span>
+        <span>&gt;</span>
+    </div>
+    <div class="select">
+        <ul>
+            <li class="active">开黑吗</li>
+            <li>我亚索贼6</li>
+            <li>只要我E的够快</li>
+            <li>队友的问号</li>
+            <li>就跟不上我</li>
+        </ul>
+    </div>
+    <script>
+        var oSelectLis = document.querySelectorAll(".select>ul>li")
+        var oBoxLis = document.querySelectorAll(".box>ul>li");
+        var oSpans = document.querySelectorAll(".box>span")
+        var oColor=["red","green","tomato","blue","purple"]
+        for (let i = 0; i < oSelectLis.length; i++) {
+            oSelectLis[i].goudan = i
+            oSelectLis[i].onclick = function () {
+                console.log("11")
+                for (j = 0; j < oBoxLis.length; j++) {
+                    oBoxLis[j].classList.remove("show")
+                    oSelectLis[j].classList.remove("active")
+                    oSelectLis[j].style.background=""
+                }
+                oBoxLis[this.goudan].classList.add("show")
+                oSelectLis[this.goudan].classList.add("active")
+                oSpans[0].style.color=oColor[this.goudan]
+                oSpans[1].style.color=oColor[this.goudan]
+                oSelectLis[this.goudan].style.background=oColor[this.goudan]
+            }
+        } var num = 0
+        oSpans[0].onclick = function () {
+            console.log("333")
+            num == 0 ? num = 4 : num--
+            for (j = 0; j < oBoxLis.length; j++) {
+                oBoxLis[j].classList.remove("show")
+                oSelectLis[j].classList.remove("active")
+                oSelectLis[j].style.background=""
+            }
+            oBoxLis[num].classList.add("show")
+            oSelectLis[num].classList.add("active")
+            oSpans[0].style.color=oColor[num]
+            oSpans[1].style.color=oColor[num]
+            oSelectLis[num].style.background=oColor[num]
+        }
+        oSpans[1].onclick = function () {
+            num == 4 ? num = 0 : num++
+            for (j = 0; j < oBoxLis.length; j++) {
+                oBoxLis[j].classList.remove("show")
+                oSelectLis[j].classList.remove("active")
+                oSelectLis[j].style.background=""
+            }
+            oBoxLis[num].classList.add("show")
+            oSelectLis[num].classList.add("active")
+            oSpans[0].style.color=oColor[num]
+            oSpans[1].style.color=oColor[num]
+            oSelectLis[num].style.background=oColor[num]
+        }
+    </script>
+</body>
+
+</html>

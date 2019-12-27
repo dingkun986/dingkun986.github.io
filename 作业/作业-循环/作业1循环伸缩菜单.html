@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        ul,li{
+            list-style: none;
+        }
+        .menu {
+            width: 160px;
+            margin:0 auto  ;
+        }
+        .menu:first-child{
+            margin:100px auto 0;
+        }
+        p{
+            width: 160px;
+            height: 40px;
+            line-height: 40px;
+            border: 1px solid #000;
+            text-align: center;
+            background-color: lightseagreen;
+        }
+        .menu ul li{
+            width: 160px;
+            height: 30px;
+            border: 1px solid #000;
+            text-align: center;
+        }
+        .menu ul {
+            display: none;
+        }
+        .menu ul.show{
+            display: block;
+        }
+        
+        .menu p.active {
+            background-color: orange;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="menu">
+        <p>基本信息</p>
+        <ul>
+            <li>基本信息111</li>
+            <li>基本信息222</li>
+            <li>基本信息333</li>
+        </ul>
+    </div>
+    <div class="menu">
+        <p>人员管理</p>
+        <ul>
+            <li>人员管理111</li>
+            <li>人员管理222</li>
+            <li>人员管理333</li>
+        </ul>
+    </div>
+    <div class="menu">
+        <p>权限管理</p>
+        <ul>
+            <li>权限管理111</li>
+            <li>权限管理222</li>
+            <li>权限管理333</li>
+        </ul>
+    </div>
+    <script>
+        let oP = document.querySelectorAll('.menu>p')
+        let oUl = document.querySelectorAll('.menu>ul')
+        let len = oUl.length
+        for (var i = 0; i < len; i++) {
+            oP[i].temIndex = i
+            oP[i].onclick = function () {
+                oUl[this.temIndex].className = oUl[this.temIndex].className ? "" : "show"
+                this.className = this.className ? '' : 'active'
+            }
+        }
+    </script>
+</body>
+
+</html>

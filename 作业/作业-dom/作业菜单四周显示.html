@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=0.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Dom</title>
+    <style>
+    .box{
+        height:300px;
+        width: 300px;
+        position: relative;
+    }
+    .menu{
+        width: 100px;
+        height: 100px;
+        background-color:blueviolet;
+        border-radius: 50%;
+        position: absolute;
+        top: 33%;
+        left: 33%;
+        transform: scale(1);
+       transition: all .3s;
+       text-align: center;
+       line-height: 100px;
+
+    }
+    li{
+       width:100px;
+       height: 100px;
+       border-radius: 50%; 
+       background-color:mediumspringgreen;
+       list-style: none;
+       position: absolute;
+       transform: scale(0);
+       transition: all .3s;
+       text-align: center;
+       line-height: 100px;
+       
+    }
+   
+    .li1{
+        top:0;
+        left: 0;
+    }
+    .li2{
+        right: 0;
+        top: 0;
+    }
+    .li3{
+        right: 0;
+        bottom: 0;
+    }
+    .li4{
+        left: 0;
+        bottom: 0;
+    }
+
+
+    </style>
+</head>
+<body>
+ <div class="box">
+   <div class="menu">菜单</div>
+    <ul>
+         <li>1</li>
+         <li>2</li>
+         <li>3</li>
+         <li>4</li>
+    </ul>        
+   </div>
+   <script>
+   var oMenu=document.querySelector(".menu")
+   var oLis=document.querySelectorAll(".box>ul>li")
+   oLis[0].className="li li1"
+   oLis[1].className="li li2"
+   oLis[2].className="li li3"
+   oLis[3].className="li li4"
+   oMenu.onclick=function(){
+       console.log(0)
+       oLis[0].style.transform='scale(1)'
+       oLis[1].style.transform='scale(1)'
+       oLis[2].style.transform='scale(1)'
+       oLis[3].style.transform='scale(1)'
+       oMenu.style.transform='scale(0)'
+       
+   }
+   
+
+
+   console.log(oLis)
+   
+   </script>
+    
+</body>
+</html>

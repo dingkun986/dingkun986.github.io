@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>数组</title>
+    <style>
+       .body{
+           height: 100vh;
+           width: 100vw;
+           position: relative;
+       }
+    
+       .box{
+           height:20%;
+           width:40%;
+          
+           position: absolute;
+           top: 10%;
+           left: 30%;
+           border: none;
+           background-color: crimson;
+           color: seagreen;
+          
+           
+        } 
+        div{
+            width: 16.66%;
+            height: 25%;
+            border: 2px solid;
+            position: absolute;
+            text-align: center;
+            line-height: 280%;
+            
+        }
+        .div1{
+            top: 0;
+            left: 0;
+            border-right: none;
+        }
+        .div2{
+            top: 0;
+            left: 16.66%;
+            border-right: none;
+        }
+        .div3{
+            top: 0;
+            left:33.33%;
+            width:49.8%;
+            border-right: none;
+        }
+        .div4{
+            top: 0;
+            
+            right: 0;
+        }
+        .div5{
+            bottom: 0;
+            left: 0;
+            height: 74%;
+            border-right: none;
+            border-top: none;
+            line-height:780%;
+        }
+        .div6{
+            bottom: 0;
+            left: 16.66%;
+            height: 74%;
+            border-right: none;
+            border-top: none;
+            line-height: 780%;
+        }
+        .div7{
+            bottom: 0;
+            left: 33.33%;
+            height: 74%;
+            width:49.8%;
+            border-right: none;
+            border-top: none;
+            line-height: 780%;
+        }
+        .div8{
+            bottom: 0;
+            right:0 ;
+            height: 74%;
+            border-top: none;
+            line-height: 780%;
+        }
+        .btn{
+            position: absolute;
+            top:32%;
+            left: 65%;
+            width: 5%;
+            height: 3%;
+        }
+        .box2{
+           height:50%;
+           width:36%;
+           position: absolute;
+           top: 40%;
+           left: 30%;
+           border: none;
+           background-color: #791ad1 ;
+           color: seagreen;
+          
+           
+        } 
+        ul{
+            list-style: none;
+        }
+        button{
+            background-color: springgreen;
+        }
+    
+    
+    </style>
+</head>
+<body>
+<div class="box">
+  <div class="div1">切换背景</div>
+  <div class="div2">单价</div>
+  <div class="div3">数量</div>
+  <div class="div4">价格</div>
+  <div class="div5">picture</div>
+  <div class="div6">99</div>
+  <div class="div7"><button>-</button><span>  0  </span><button>+</button></div>
+  <div class="div8"><span> 0 </span></div>
+</div>
+
+     <ul class="box2">
+
+
+
+     </ul>
+
+<button class="btn">购买</button>
+   <script>
+   var oBtn=document.querySelectorAll("button")
+   var oNum=document.querySelectorAll("span")
+   var oBox=document.querySelector(".box")
+   var oColor=["darkorange","dodgerblue","hotpink","white"]
+   var oDiv1=document.querySelector(".div1")
+   var oBox2=document.querySelector(".box2")
+   var oDiv5=document.querySelector(".div5")
+   var oDiv6=document.querySelector(".div6")
+   var obg=0;
+   
+   oBtn[0].onclick=function(){
+       if(oNum[0].innerHTML==0){
+           console("不减了")
+       }else{
+         
+         oNum[0].innerHTML=Number(oNum[0].innerHTML)-Number(1);
+         oNum[1].innerHTML=Number(oNum[1].innerHTML)-Number(99);
+         console.log(oNum[0].innerHTML)
+         }
+   }
+   oBtn[1].onclick=function(){
+         
+         oNum[0].innerHTML=Number(oNum[0].innerHTML)+Number(1);
+         oNum[1].innerHTML=Number(oNum[1].innerHTML)+Number(99);
+         console.log(oNum[1].innerHTML)
+   }
+   
+   oDiv1.onclick=function(){
+
+       oBox.style.backgroundColor=oColor[obg % oColor.length];
+       obg++
+   }
+   oBtn[2].onclick=function(){
+        oBox2.innerHTML+="<li>"+oDiv5.innerHTML+"&nbsp;&nbsp;"+oDiv6.innerHTML+"&nbsp;&nbsp&nbsp;&nbsp;数量："+oNum[0].innerHTML+"&nbsp;&nbsp;&nbsp;&nbsp;总计："+oNum[1].innerHTML+"元&nbsp;&nbsp;&nbsp;&nbsp;"+"<button>立即付款</button></li>"
+
+
+   }
+
+
+   
+   </script>
+
+    
+</body>
+</html>

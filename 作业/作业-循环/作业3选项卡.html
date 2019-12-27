@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font-size: 14px;
+        }
+        .box {
+            width: 600px;
+            height: 100px;
+            margin: 50px auto;
+        }
+        .box p {
+            border-bottom: dashed 1px gold;
+            font-weight: bolder;
+            height: 40px;
+            line-height: 40px;
+        }
+        .box ul,.box ul li {
+            list-style: none;
+        }
+        .box ul li{
+            height:50px;
+            line-height: 50px;
+            margin: auto 15px;
+            background: url("img/ckbg1.jpg") no-repeat 0px 12px;
+            width:60px;
+            float: left;
+            text-indent: 28px;
+            font-size: 12px;
+        }
+        .box ul li.active{
+            background: url("img/ckbg2.jpg") no-repeat 0px 12px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <p>你最喜欢的水果</p>
+        <ul>
+            <li>苹果</li>
+            <li>梨子</li>
+            <li>香蕉</li>
+            <li>葡萄</li>
+            <li>西瓜</li>
+            <li>芒果</li>
+        </ul>
+    </div>
+    <script>
+         var oLis=document.querySelectorAll(".box>ul>li")
+         for(i=0;i<oLis.length;i++){
+               oLis[i].onclick=function(){
+                   this.classList.toggle("active")
+               }
+         }
+    </script>
+</body>
+
+</html>

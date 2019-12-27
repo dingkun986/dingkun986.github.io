@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>伸缩菜单</title>
+    <style>
+        div {
+            border: solid 1px black;
+            margin: 0 auto;
+            text-align: center;
+            width: 150px;
+            height: 15px;
+            line-height:15px;
+            padding: 15px;
+        }
+        .base {
+            margin: 100px auto 0px;
+            background: dodgerblue;
+            height: 30px;
+            line-height:30px;
+        }
+        .person{
+            background: dodgerblue;
+            height: 30px;
+            line-height:30px;
+        }
+        .power{
+            background: dodgerblue;
+            height: 30px;
+            line-height:30px;
+        }
+        .gold{
+            background-color:gold;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="base">基本信息</div>
+    <span></span>
+    <div class="person">人员管理</div>
+    <span></span>
+    <div class="power">权限设置</div>
+    <span></span>
+    <script>
+        var oBase = document.querySelector(".base")
+        var oPerson = document.querySelector(".person")
+        var oPower = document.querySelector(".power")
+        var oSpan = document.querySelectorAll("span")
+        var oDiv=document.querySelectorAll("div")
+        var base= true
+        var person=true
+        var power=true
+        oBase.onclick= function () {
+            if (base) {
+                oSpan[0].innerHTML = "<div>基本信息111</div><div>基本信息222</div><div>基本信息333</div>"
+                base= false;
+                oBase.classList.add("gold")
+            } else {
+                oSpan[0].innerHTML = ""
+                base= true
+                oBase.classList.remove("gold")
+            }
+        }
+        oPerson.onclick = function () {
+            if (person) {
+                oSpan[1].innerHTML = "<div>人员管理111</div><div>人员管理222</div><div>人员管理333</div>"
+                person= false
+                oPerson.classList.add("gold")
+            } else {
+                oSpan[1].innerHTML = ""
+                person= true
+                oPerson.classList.remove("gold")
+            }
+        }
+        oPower.onclick = function () {
+            if (power) {
+                oSpan[2].innerHTML = "<div>权限设置111</div><div>权限设置222</div><div>权限设置333</div>"
+                power= false
+                oPower.classList.add("gold")
+            } else {
+                oSpan[2].innerHTML = ""
+                power= true
+                oPower.classList.remove("gold")
+            }
+        }
+    </script>
+</body>
+
+</html>

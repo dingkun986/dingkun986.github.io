@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font-size: 12px;
+        }
+        .box {
+            width: 1000px;
+            height: 400px;
+            margin: 0 auto;
+        }
+        .box ul {
+            list-style: none;
+            margin: 50px auto;
+        }
+        .box ul li {
+            border-bottom: solid red 1px;
+            height: 60px;
+            width: 100%;
+            line-height: 60px;
+            text-align: center;
+            position: relative;
+        }
+        .box ul li input {
+            display: none;
+            position: absolute;
+            left: 38%;
+            top: 30%;
+            height: 22px;
+            line-height: 22px;
+            color: darkgray;
+        }
+        .box ul li input.show {
+            display: block;
+        }
+        .box ul li button {
+            position: absolute;
+            left: 55%;
+            top: 30%;
+            width: 40px;
+            height: 25px;
+            background: black;
+            color: white;
+            border: none;
+        }
+        .box ul li p {
+            position: absolute;
+            right: 47%;
+            top: 3%;
+        }
+        .box ul li p.disspear {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <ul>
+            <li>
+                <p>点击修改</p><input type="text"><button>修改</button>
+            </li>
+            <li>
+                <p>点击修改</p><input type="text"><button>修改</button>
+            </li>
+            <li>
+                <p>点击修改</p><input type="text"><button>修改</button>
+            </li>
+            <li>
+                <p>点击修改</p><input type="text"><button>修改</button>
+            </li>
+        </ul>
+    </div>
+    <script>
+        var oBtn = document.querySelectorAll(".box>ul>li>button")
+        var oPs = document.querySelectorAll(".box>ul>li>p")
+        var oInputs = document.querySelectorAll(".box>ul>li>input")
+        for (i = 0; i < oBtn.length; i++) {
+            oBtn[i].goudan = i
+            var judge = true
+            oBtn[i].onclick = function () {
+                oPs[this.goudan].classList.toggle("disspear")
+                oInputs[this.goudan].classList.toggle("show");
+                if (judge) {
+                    this.innerHTML = "确认"
+                    oInputs[this.goudan].value = oPs[this.goudan].innerHTML
+                    judge = false
+                }
+                else {
+                    this.innerHTML = "修改"
+                    oPs[this.goudan].innerHTML = oInputs[this.goudan].value
+                    judge = true
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>
